@@ -64,3 +64,8 @@ jobs:
 
       - name: Run a script
         run: node bypasscf.js --USERNAMES "$USERNAMES" --PASSWORDS "$PASSWORDS" --WEBSITE "$WEBSITE"
+
+      - name: Clean up
+        if: always()
+        run: |
+          rm -rf /path/to/temporary/files
